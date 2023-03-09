@@ -8,7 +8,7 @@ pipeline {
     stages {
         stage('Fetch source code') {
             steps {
-                git 'https://github.com/Reddy74/angularnodejs.git'
+                git 'https://github.com/Reddy74/angular4-docker.git'
             }
         }
         stage('Build Docker image') {
