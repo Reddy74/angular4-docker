@@ -1,7 +1,7 @@
 ### STAGE 1: Build ###
 
 # We label our stage as 'builder'
-FROM node:14-alpine as builder
+FROM node:17 as builder
 
 COPY package.json ./
 
@@ -15,7 +15,8 @@ WORKDIR /ng-app
 COPY . .
 
 ## Build the angular app in production mode and store the artifacts in dist folder
-RUN $(npm bin)/ng build --prod
+#RUN $(npm bin)/ng build --prod
+RUN $(npm bin)/ng build
 
 
 ### STAGE 2: Setup ###
